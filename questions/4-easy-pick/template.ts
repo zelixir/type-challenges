@@ -1,2 +1,3 @@
-type MyPick<T, K> = {[P in keyof T as K extends P ? P : never]:  T[P] }
+type MyPick<T, K extends keyof T> = { [P in K]: T[P] }
+
 
