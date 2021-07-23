@@ -37,3 +37,4 @@ type Expected = {
     }
   }
 }
+type R = DeepReadonly<X>

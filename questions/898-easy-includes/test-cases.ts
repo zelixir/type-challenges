@@ -1,5 +1,4 @@
 import { Equal, Expect } from '@type-challenges/utils'
-
 type cases = [
   Expect<Equal<Includes<['Kars', 'Esidisi', 'Wamuu', 'Santana'], 'Kars'>, true>>,
   Expect<Equal<Includes<['Kars', 'Esidisi','Wamuu', 'Santana'], 'Dio'>, false>>,
@@ -11,3 +10,5 @@ type cases = [
   Expect<Equal<Includes<[boolean, 2, 3, 5, 6, 7], false>, false>>,
   Expect<Equal<Includes<[true, 2, 3, 5, 6, 7], boolean>, false>>,
 ]
+type X = Includes<[boolean, 2, 3, 5, 6, 7], false>
+
