@@ -13,10 +13,13 @@ type Mult<A extends any[], D extends string> =
   []
 
 type IsDigit<S extends string> = S extends "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ? true : false
+type Pow<P extends any[], ns extends string> = ns extends `${infer _}${infer b}` ? Pow<Mult<P,'10'>, b> : P
 type SToA<S extends string, P extends any[] = [0]> =
   S extends '' ? [] :
   IsDigit<S> extends true ? Mult<P, S> :
   S extends `${infer t}${infer d}` ?
-  [...Mult<P, d>, ...SToA<t, Mult<P, '10'>>] : []
+  [...SToA<d, P>, ...SToA<t, Pow<P, d>>] : []
 type ToNumber<S extends string> = SToA<S>['length']
+
+type xx = ToNumber<"9999">
 

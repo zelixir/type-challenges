@@ -1,7 +1,7 @@
 import { Equal, Expect } from '@type-challenges/utils'
 
-const curried1 = DynamicParamsCurrying((a: string, b: number, c: boolean) => true)
-const curried2 = DynamicParamsCurrying((a: string, b: number, c: boolean, d: boolean, e: boolean, f: string, g: boolean) => true)
+const curried1 = DynamicParamsCurrying((a: string, b: number, c: boolean) => b == 1)
+const curried2 = DynamicParamsCurrying((a: string, b: number, c: boolean, d: boolean, e: boolean, f: string, g: boolean) => b == 1)
 
 const curried1Return1 = curried1('123')(123)(true)
 const curried1Return2 = curried1('123', 123)(false)
